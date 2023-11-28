@@ -1,4 +1,5 @@
-import { start } from './lib/figlet.js';
+import {routes} from './routes/route.js';
+import {start} from './lib/figlet.js';
 import express from 'express';
 import path from 'path';
 
@@ -8,18 +9,7 @@ const app = express(),
 
 app.set('view engine', 'pug')
 app.set('views', 'my_app/views')
-
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/my_app/public/main.html');
-});
-
-app.get('/write', (req, res) => {
-    res.render('home');
-});
-
-app.get('/pug', (req, res) => {
-    res.render('pug');
-});
+app.use(routes);
 
 // server setting
 app.listen(port, () => {
