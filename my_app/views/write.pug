@@ -3,14 +3,17 @@ extends base
 block content
     h1 글 작성 페이지
     form(action="/write" method="post")
-        label(for="title") 제목
-        input(type="text" name="title" id="title")
-        br
-        label(for="contents") 내용
-        textarea(name="contents" id="contents" cols="20" rows="5")
-        br
-        label(for="date") 날짜
-        input(type="date" name="date" id="date")
-        br
+        p
+            label(for="title") 제목
+            input(type="text" name="title" id="title")
 
-        input(type="submit" value="글 작성 완료")
+        p
+            label(for="contents") 내용
+            textarea(name="contents" id="contents" cols="20" rows="5")
+
+        p
+            label(for="date") 날짜
+            input(type="date" name="date" id="date")
+
+        p
+            input(type="submit" value="글 작성 완료")
