@@ -9,6 +9,12 @@ router.get("/write", controller.writeForm);
 
 router.post("/write", controller.write);
 
-router.get("/detail", controller.detail);
+router.get("/detail/:id", controller.detail);
+
+router.get("/edit/:id", controller.editForm);
+
+router.post("/edit/:id", controller.edit);``
+
+router.post("/delete/:id", controller.deleteContent);
 
 export { router as routes };
